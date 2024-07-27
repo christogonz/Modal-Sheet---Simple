@@ -13,8 +13,11 @@ struct SignInView: View {
     
     var body: some View {
         ZStack() {
-            VStack(spacing: 20) {
+            Color(.secondarySystemBackground)
+            
+            VStack(spacing: 16) {
                 Text("Sign In")
+                    .foregroundStyle(.primary)
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .frame(maxWidth: 335, alignment: .leading)
@@ -33,7 +36,7 @@ struct SignInView: View {
                 .clipShape(.rect(cornerRadius: 20))
                 
                 HStack {
-                    GradientIcon()
+                    GradientIcon(icon: "lock.fill")
                     TextField("Password", text: $password)
                 }
                 .padding(8)
